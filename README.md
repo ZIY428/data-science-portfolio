@@ -2,7 +2,7 @@
 
 My data science portfolio, published with **GitHub Pages**.
 
-**Live site:** https://GITHUB_USERNAME.github.io/data-science-portfolio/
+**Live site:** https://ZIY428.github.io/data-science-portfolio/
 
 ## What this is
 
