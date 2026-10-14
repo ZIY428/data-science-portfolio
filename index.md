@@ -58,7 +58,7 @@ sight, so the file records what was *received*, not every aircraft that was
 flying. Every count above is therefore a lower bound, and no conclusion about
 total traffic volume should be drawn from it.
 
-**Project repository.** [data-science-project](https://github.com/GITHUB_USERNAME/data-science-project)
+**Project repository.** [data-science-project](https://github.com/ZIY428/data-science-project)
 
 **Project status.** ✅ **Completed**
 
