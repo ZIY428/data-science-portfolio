@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LU ZIYI — Data Science Portfolio</title>
+<meta name="description" content="Data science portfolio of LU ZIYI (MC652428), University of Macau: projects, tools and findings.">
+<style>
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0 1.25rem 5rem;
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2328; background: #fff; }
+main { max-width: 46rem; margin: 0 auto; }
+h1 { font-size: 2rem; line-height: 1.25; margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.4rem; margin: 2.5rem 0 0.75rem; padding-bottom: 0.3rem;
+  border-bottom: 1px solid #d8dee4; }
+h3 { font-size: 1.15rem; margin: 2rem 0 0.5rem; }
+p { margin: 0.85rem 0; }
+a { color: #0969da; }
+code { background: #f6f8fa; padding: 0.15em 0.35em; border-radius: 4px;
+  font-size: 0.9em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+ul { margin: 0.75rem 0; padding-left: 1.5rem; }
+li { margin: 0.35rem 0; }
+hr { border: 0; border-top: 1px solid #d8dee4; margin: 2.5rem 0; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+th, td { border: 1px solid #d8dee4; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+th { background: #f6f8fa; font-weight: 600; }
+img { max-width: 100%; height: auto; border: 1px solid #d8dee4; border-radius: 6px;
+  margin: 0.75rem 0; }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #d8dee4;
+  font-size: 0.85rem; color: #59636e; }
+@media (prefers-color-scheme: dark) {
+  body { color: #e6edf3; background: #0d1117; }
+  h2, th, td, img, footer { border-color: #30363d; }
+  code, th { background: #161b22; }
+  a { color: #4493f8; }
+  footer { color: #8b949e; }
+}
+@media (max-width: 600px) { body { font-size: 15px; } h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<main>
+<h1>LU ZIYI — Data Science Portfolio</h1>
+<h2>About me</h2>
+<p>I am a Master's student at the <strong>University of Macau</strong>, studying data science and data visualization (CISC7204). I work mainly in <strong>Python</strong>, taking a question from raw, messy data through cleaning, exploration and modelling to a visualization that a reader can actually act on.</p>
+<p>I care most about the step between a table and an insight: choosing an encoding that makes the answer obvious, and being honest about what the data does <em>not</em> support. I am currently building out this portfolio with the projects I complete during my coursework.</p>
+<h2>Technical skills</h2>
+<table>
+<thead><tr><th>Area</th><th>Tools</th></tr></thead>
+<tbody>
+<tr><td>Languages</td><td>Python 3, SQL (basic), HTML/Markdown</td></tr>
+<tr><td>Data handling</td><td>pandas, NumPy, SciPy</td></tr>
+<tr><td>Visualization</td><td>matplotlib, seaborn, Plotly, Dash, Bokeh</td></tr>
+<tr><td>Machine learning</td><td>scikit-learn (regression, clustering, model evaluation)</td></tr>
+<tr><td>Environment</td><td>Jupyter Notebook / JupyterLab, Anaconda, Git, GitHub</td></tr>
+</tbody></table>
+<h2>Project showcase</h2>
+<h3>Flight Movement Analysis — Aircraft Tracks Around Leeds</h3>
+<p><strong>Research question.</strong> How does aircraft traffic behave over time in the airspace around Leeds, and can the raw ADS-B position reports be reduced to a small number of interpretable descriptors of that traffic?</p>
+<p><strong>Dataset.</strong> 33,766 ADS-B position reports covering 2017/09/11–2017/09/16 from 805 distinct aircraft, distributed as course material for CISC7204.</p>
+<p><strong>Visualization.</strong></p>
+<p><img src="figures/flight_tracks_frame.png" alt="Rolling 180-second window of aircraft tracks around Leeds"></p>
+<p><strong>What the visualization shows.</strong> Each polyline is one aircraft, drawn from its position reports joined in time order; the panel shows the traffic visible inside a rolling 180-second window. Joining the reports this way converts 33,766 scattered points into clean, readable tracks — proof that ordering by the reconstructed timestamp recovers real flight paths rather than producing noise.</p>
+<p><strong>Key findings.</strong></p>
+<ul><li>The airspace carries <strong>805 distinct aircraft</strong>, but observations are heavily skewed: median <strong>18</strong> reports per aircraft against a maximum of <strong>564</strong>.</li><li><strong>72.8 %</strong> of all reports are above 20,000 ft, with a secondary cluster at 1,000–5,000 ft — a clear separation between overflights/cruise and terminal traffic.</li><li>Some sampled windows contain no reports at all, so coverage is intermittent rather than continuous.</li></ul>
+<p><strong>One limitation.</strong> ADS-B reception depends on ground-station coverage and line of sight, so the file records what was <em>received</em>, not every aircraft that was flying. Every count above is therefore a lower bound, and no conclusion about total traffic volume should be drawn from it.</p>
+<p><strong>Project repository.</strong> <a href="https://github.com/ZIY428/data-science-project">data-science-project</a></p>
+<p><strong>Project status.</strong> ✅ <strong>Completed</strong></p>
+<hr>
+<h2>How to read this portfolio</h2>
+<p>Each project entry states the question, the data, the method, what the visualization shows, the honest limits of the result, and a link to the full code. If you want to reproduce anything here, every repository includes a <code>README.md</code> with exact versions and run instructions.</p>
+<p><em>Last updated: October 2026</em></p>
+<footer>
+  <p>LU ZIYI (MC652428) &middot; University of Macau &middot; CISC7204 Data Science and Data Visualization</p>
+  <p>Built as a static page for GitHub Pages. Source document: <code>index.md</code>.</p>
+</footer>
+</main>
+</body>
+</html>
