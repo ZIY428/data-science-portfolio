@@ -43,7 +43,13 @@ a rolling 180-second window. Joining the reports this way converts 33,766
 scattered points into clean, readable tracks — proof that ordering by the
 reconstructed timestamp recovers real flight paths rather than producing noise.
 
-**Key findings.**
+**Main finding.** The airspace is dominated by **high-altitude transit**: 72.8 %
+of all reports sit above 20,000 ft, while only a small secondary cluster
+(1,000–5,000 ft) looks like terminal traffic, and each aircraft contributes a
+median of just **18** reports. The data therefore describes *many brief
+overflights* rather than a few flights tracked end to end.
+
+**Supporting findings.**
 
 - The airspace carries **805 distinct aircraft**, but observations are heavily
   skewed: median **18** reports per aircraft against a maximum of **564**.
