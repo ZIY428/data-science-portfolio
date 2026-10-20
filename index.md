@@ -35,13 +35,21 @@ of interpretable descriptors of that traffic?
 
 **Visualization.**
 
-![Rolling 180-second window of aircraft tracks around Leeds](figures/flight_tracks_frame.png)
+![Raw ADS-B position reports (a) and the same reports joined in time order per aircraft (b)](figures/flight_tracks_frame.png)
 
-**What the visualization shows.** Each polyline is one aircraft, drawn from its
-position reports joined in time order; the panel shows the traffic visible inside
-a rolling 180-second window. Joining the reports this way converts 33,766
-scattered points into clean, readable tracks — proof that ordering by the
-reconstructed timestamp recovers real flight paths rather than producing noise.
+**What the visualization shows.** Panel (a) plots all 33,766 position reports as
+raw points: they form a dense blob with no visible structure. Panel (b) draws the
+same points as polylines — one per aircraft, joined in time order — using the
+timestamp reconstructed from the separate `date` and `time` columns. The scatter
+turns into visible flight corridors, which is the evidence that ordering by the
+reconstructed timestamp recovers real paths rather than producing noise.
+
+![One continuous flight, coloured by elapsed time](figures/single_aircraft_route.png)
+
+The second figure isolates a single continuous flight (192 reports over seven
+minutes). Reports from the same aircraft on different days are split into
+separate segments whenever the gap between them exceeds five minutes, so no line
+is ever drawn across a jump in time that was not actually flown.
 
 **Main finding.** The airspace is dominated by **high-altitude transit**: 72.8 %
 of all reports sit above 20,000 ft, while only a small secondary cluster
